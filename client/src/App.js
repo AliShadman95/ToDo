@@ -13,7 +13,7 @@ const App = () => {
     console.log("inside effect");
     const fetchTasks = async () => {
       const response = await axios.get("http://localhost:3005/tasks");
-      console.log(response);
+      console.log(response.data);
       setToDos(response.data);
     };
 
@@ -57,7 +57,7 @@ const App = () => {
   const onCheck = async id => {
     let task = {
       status:
-        toDos.find(e => e._id === id).status !== "pending"
+        toDos.find(e => e.id === id).status !== "pending"
           ? "pending"
           : "complete"
     };

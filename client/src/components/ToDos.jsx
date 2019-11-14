@@ -7,15 +7,15 @@ const ToDos = ({ todos, onDelete, onCheck }) => {
       {todos.map(e => {
         return (
           <ToDosItem
-            key={e._id}
+            key={e.id}
             task={e}
             onCheck={f => {
               f.preventDefault();
-              onCheck(e._id);
+              onCheck(e.id);
             }}
             onDelete={f => {
               f.preventDefault();
-              onDelete(e._id);
+              onDelete(e.id);
             }}
           />
         );
